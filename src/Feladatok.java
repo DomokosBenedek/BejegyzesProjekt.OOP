@@ -1,8 +1,5 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Feladatok {
     List<Bejegyzes> bejegyzesek = new ArrayList<Bejegyzes>();
@@ -102,7 +99,7 @@ public class Feladatok {
     }
 
     public void FileKiiras(String fileName){
-        //List<Bejegyzes> sortBejegyzesek = bejegyzesek.sort();
+        Collections.sort(bejegyzesek, Comparator.comparing(x -> x.getLikeok()));
 
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
@@ -114,7 +111,7 @@ public class Feladatok {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("Beolvasas sikeres.");
+        System.out.println("Kiiras sikeres.");
     }
 
 

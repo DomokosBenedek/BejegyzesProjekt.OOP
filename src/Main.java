@@ -5,20 +5,20 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Feladatok f = new Feladatok();
         f.ketbejegyzes();
-        //f.kiiras();
-        //f.bekeres();
-        //f.beolvasas("bejegyzesek.csv");
+        f.kiiras();
+        f.bekeres();
+        f.beolvasas("bejegyzesek.csv");
         f.likeKiosztas();
         for (Bejegyzes element:f.bejegyzesek){
             System.out.println(element.getSzerzo() + ": " + element.getTartalom() + "\n"+
                     element.getLikeok());
         }
-        //f.kiiras();
+        f.kiiras();
         //Szerkesztés
-        /*
+
         System.out.println("mire változtassuk a 2. bejegyzés tartalmát?");
         String valtozas = scanner.nextLine();
-        f.szerkeszt(2, valtozas);*/
+        f.szerkeszt(2, valtozas);
         f.kiiras();
         System.out.println("A legnépszerübb bejegyzés." + f.legNepszerubb());
         if (f.overXLike(35)==true){
